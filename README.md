@@ -26,10 +26,10 @@ How can consumer shopping data be leveraged to identify trends, improve engageme
 - Records: 3,900 transactions
 - Features: 18 columns
 - Key Attributes:
-  -- Customer demographics (Age, Gender, Location)
-  -- Purchase behavior (Category, Item, Amount, Season)
-  -- Marketing signals (Discount Applied, Review Rating)
-  -- Loyalty indicators (Subscription Status, Previous Purchases)
+  - Customer demographics (Age, Gender, Location)
+  - Purchase behavior (Category, Item, Amount, Season)
+  - Marketing signals (Discount Applied, Review Rating)
+  - Loyalty indicators (Subscription Status, Previous Purchases)
 - Missing Data: Review ratings (handled via category-wise median imputation)
 
 #🛠️ Tech Stack
@@ -53,16 +53,70 @@ Power BI (Interactive Dashboard)
 Insights & Business Recommendations
 
 # 🧪 Data Preparation (Python)
-Cleaned and standardized column names (snake_case)
+- Cleaned and standardized column names (snake_case)
+- Handled missing review ratings using median by product category
+- Created engineered features:
+- age_group
+- purchase_frequency
+- Validated redundant features and optimized dataset
+- Loaded clean data into SQL database for analysis
 
-Handled missing review ratings using median by product category
+# 🧮 SQL Analysis (Business-Focused Queries)
+Key analyses include:
+- Revenue contribution by gender
+- High-spending customers who still use discounts
+- Top-rated and top-selling products
+- Subscription vs non-subscription revenue comparison
+- Shipping type impact on average spend
+- Discount-dependent products
+- Customer segmentation: New · Returning · Loyal
+- Repeat buyers vs subscription likelihood
+- Revenue contribution by age group
 
-Created engineered features:
+# 📈 Power BI Dashboard
+An interactive executive dashboard was built to visualize:
+- Customer distribution & KPIs
+- Revenue by category, age group, and gender
+- Subscription impact on revenue
+- Shipping behavior insights
+- Sales & ratings overview
+- Designed for non-technical stakeholders to quickly derive insights and take action
 
-age_group
+# 💡 Key Business Insights
+- Subscribers generate more consistent revenue
+- Loyal customers form the largest segment
+- Express shipping users spend slightly more per order
+- Certain products rely heavily on discounts
+- Young and middle-aged customers drive the highest revenue
 
-purchase_frequency
+# 🚀 Business Recommendations
+- Promote subscription benefits to boost recurring revenue
+- Introduce loyalty rewards for repeat customers
+- Optimize discount strategies to protect margins
+- Highlight top-rated & best-selling products in campaigns
+- Focus targeted marketing on high-revenue age groups
 
-Validated redundant features and optimized dataset
+# 📂 Repository Structure
+├── data/
+│   └── raw_dataset.csv
+├── python/
+│   ├── data_cleaning.py
+│   └── feature_engineering.py
+├── sql/
+│   ├── schema.sql
+│   └── business_queries.sql
+├── power_bi/
+│   └── customer_behavior_dashboard.pbix
+├── reports/
+│   └── insights_and_recommendations.pdf
+└── README.md
 
-Loaded clean data into SQL database for analysis
+# 🧠 What This Project Demonstrates
+✔ Business-first data thinking
+✔ Strong SQL & Python fundamentals
+✔ End-to-end analytics ownership
+✔ Stakeholder-ready dashboards
+✔ Industry-relevant problem solving
+
+# 📬 Contact
+If you’d like to discuss this project, collaborate, or explore improvements (FastAPI, Docker, cloud deployment), feel free to connect.
